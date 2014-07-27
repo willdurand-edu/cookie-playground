@@ -1,0 +1,13 @@
+{
+    "name": "willdurand/cookie-playground",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "William DURAND",
+            "email": "william.durand1@gmail.com"
+        }
+    ],
+    "require": {
+        "silex/silex": "~1.2"
+    }
+}
