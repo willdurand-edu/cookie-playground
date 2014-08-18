@@ -1,0 +1,20 @@
+<p>Your personal ID is: {{ trackerId }}</p>
+
+<table>
+    <tr>
+        <th>Date</th>
+        <th>Info</th>
+    </tr>
+{% for date, info in data %}
+    <tr>
+        <td>{{ date }}</td>
+        <td>
+            <ul>
+            {% for k, v in info %}
+                <li>{{ k }}: {{ v }}</li>
+            {% endfor %}
+            </ul>
+        </td>
+    </tr>
+{% endfor %}
+</table>

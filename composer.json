@@ -8,6 +8,11 @@
         }
     ],
     "require": {
-        "silex/silex": "~1.2"
+        "silex/silex": "~1.2",
+        "symfony/yaml": "~2.4",
+        "twig/twig": ">=1.8,<2.0-dev"
+    },
+    "autoload": {
+        "classmap": [ "tracker/" ]
     }
 }
