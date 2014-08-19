@@ -48,12 +48,8 @@ $app->get('/img.gif', function (Request $request) use ($app) {
             $id,
             $app['cookie.lifetime']
         ));
-
-        error_log(sprintf('New user got unique ID: %d', $id));
     } else {
         $id = $request->cookies->get($app['cookie.name']);
-
-        error_log(sprintf('User with unique ID %d is back!', $id));
     }
 
     $data = array_merge($request->query->all(), $request->server->all());
