@@ -38,9 +38,7 @@ $app->get('/img.gif', function (Request $request) use ($app) {
         throw new NotFoundHttpException();
     }
 
-    $response = new Response();
-    $response->headers->set('Content-Type', 'image/gif');
-    $response->setContent("\x47\x49\x46\x38\x37\x61\x1\x0\x1\x0\x80\x0\x0\xfc\x6a\x6c\x0\x0\x0\x2c\x0\x0\x0\x0\x1\x0\x1\x0\x0\x2\x2\x44\x1\x0\x3b");
+    $response = new GifResponse();
 
     if (!$request->cookies->has($app['cookie.name'])) {
         $id = mt_rand();
