@@ -61,4 +61,4 @@ $app->get('/img.gif', function (Request $request) use ($app) {
     return $response;
 });
 
-$app->run();
+return $app;
