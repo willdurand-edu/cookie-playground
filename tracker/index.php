@@ -43,18 +43,20 @@ $app->get('/img.gif', function (Request $request) use ($app) {
     if (!$request->cookies->has($app['cookie.name'])) {
         $id = mt_rand();
 
-        $response->headers->setCookie(new Cookie(
+        $response->setCookie(
             $app['cookie.name'],
             $id,
             $app['cookie.lifetime']
-        ));
+        );
     } else {
         $id = $request->cookies->get($app['cookie.name']);
     }
 
-    $data = array_merge($request->query->all(), $request->server->all());
-
-    $app['storage']->set($id, new \DateTime(), $data);
+    $app['storage']->set(
+        $id,
+        new \DateTime(),
+        array_merge($request->query->all(), $request->server->all())
+    );
 
     return $response;
 });

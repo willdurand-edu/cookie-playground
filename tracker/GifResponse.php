@@ -15,4 +15,11 @@ class GifResponse extends Response
         $this->headers->set('Content-Type', 'image/gif');
         $this->headers->set('X-Content-Type-Options', 'nosniff');
     }
+
+    public function setCookie($name, $value, $lifetime = null)
+    {
+        $this->headers->setCookie(new Cookie($name, $value, $lifetime));
+
+        return $this;
+    }
 }
