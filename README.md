@@ -31,7 +31,10 @@ The _website_ does not do much, but is available at:
 ### Tracker
 
 The tracker is responsible for serving a single-pixel image along with a cookie,
-and, of course, persisting as much client data as possible.
+and, of course, persisting as much client data as possible. It automatically
+assigns an identifier when not found, and aggregates all data by identifier.
+When looking at the dashboard, you will only get your own information, but it
+would be easy to build a better view to see all information available.
 
 The tracker also offers a simple JavaScript file that is used to build a request
 to fetch the single-pixel image from the websites using the service.
@@ -42,6 +45,11 @@ to fetch the single-pixel image from the websites using the service.
 
 The website requires a JavaScript file from the tracker (à la Google Analytics
 or Piwik). That's it.
+
+### Next?
+
+Go ahead and hack the project! You can pass as many data as you wish to by
+updating the `tracker/public/tracker.js` script.
 
 License
 -------
