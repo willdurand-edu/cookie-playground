@@ -36,6 +36,8 @@ and, of course, persisting as much client data as possible.
 The tracker also offers a simple JavaScript file that is used to build a request
 to fetch the single-pixel image from the websites using the service.
 
+![](doc/tracker.png)
+
 ### Website
 
 The website requires a JavaScript file from the tracker (à la Google Analytics
