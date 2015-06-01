@@ -1,20 +1,39 @@
-<p>Your personal ID is: {{ trackerId }}</p>
+{% extends 'layout.html.twig' %}
 
-<table>
-    <tr>
-        <th>Date</th>
-        <th>Info</th>
-    </tr>
-{% for date, info in data %}
-    <tr>
-        <td>{{ date }}</td>
-        <td>
-            <ul>
-            {% for k, v in info %}
-                <li>{{ k }}: {{ v }}</li>
-            {% endfor %}
-            </ul>
-        </td>
-    </tr>
-{% endfor %}
-</table>
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page-header">
+                    <h1>Tracker <small>Your personal ID is: {{ trackerId }}</small></h1>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Info</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for date, info in data %}
+                    <tr>
+                        <td>{{ date }}</td>
+                        <td>
+                            <ul>
+                                {% for k, v in info %}
+                                <li>{{ k }}: {{ v }}</li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

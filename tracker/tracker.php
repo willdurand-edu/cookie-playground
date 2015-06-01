@@ -7,7 +7,11 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
-$app = new Silex\Application();
+$app   = new Silex\Application();
+$stack = (new Stack\Builder())
+    ->push('Asm89\Stack\Cors', [
+        'allowedOrigins' => [ '*' ],
+    ]);
 
 $app->register(new Silex\Provider\TwigServiceProvider(), [
     'twig.path' => __DIR__ . '/views',
@@ -19,7 +23,7 @@ $app['cookie.lifetime'] = 0;
 $app['storage']         = new \YamlStorage(__DIR__ . '/data.yml');
 
 
-$app->get('/', function (Request $request) use ($app) {
+$app->get('/dashboard', function (Request $request) use ($app) {
     if (!$request->cookies->has($app['cookie.name'])) {
         return 'No data yet...';
     }
@@ -61,4 +65,4 @@ $app->get('/img.gif', function (Request $request) use ($app) {
     return $response;
 });
 
-return $app;
+return $stack->resolve($app);

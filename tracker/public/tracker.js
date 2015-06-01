@@ -2,7 +2,7 @@
     "use strict";
 
     var data = [],
-        gif  = '//localhost:4000/index.php/img.gif',
+        gif  = '//localhost:4000/tracker/public/index.php/img.gif',
         xhr,
         queryString = '';
 

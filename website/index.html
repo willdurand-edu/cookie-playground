@@ -6,7 +6,12 @@
 <body>
     <h1>Awesome Website</h1>
     <p>
-        <img src="http://localhost:8000/index.php/img.gif">
+        <!-- <img src="http://localhost:8000/tracker/public/index.php/img.gif"> -->
     </p>
+    <script>
+        var analytics = document.createElement('script');
+        analytics.setAttribute('src', '//' + window.location.host + '/tracker/public/tracker.js');
+        document.head.appendChild(analytics);
+    </script>
 </body>
 </html>

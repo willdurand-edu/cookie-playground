@@ -10,7 +10,10 @@
     "require": {
         "silex/silex": "~1.2",
         "symfony/yaml": "~2.4",
-        "twig/twig": ">=1.8,<2.0-dev"
+        "twig/twig": ">=1.8,<2.0-dev",
+        "asm89/stack-cors": "^0.2.1",
+        "stack/builder": "^1.0",
+        "stack/run": "^1.0"
     },
     "autoload": {
         "classmap": [ "tracker/src/" ]
